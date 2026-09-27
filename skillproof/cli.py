@@ -70,7 +70,8 @@ def _cmd_report(args) -> int:
     run_dict = json.loads(run_path.read_text(encoding="utf-8"))
     record.assert_valid(run_dict)
     out = run_dir / "REPORT.md"
-    out.write_text(report.render(run_dict), encoding="utf-8", newline="\n")
+    with open(out, "w", encoding="utf-8", newline="\n") as f:
+        f.write(report.render(run_dict))
     print("rewrote %s" % out)
     return 0
 

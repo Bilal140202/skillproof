@@ -336,8 +336,8 @@ def run(suite, config, skill, out_root: Path) -> Tuple[dict, int]:
 
     (run_dir / "run.json").write_text(json_dump(run_dict), encoding="utf-8")
     from . import report
-    (run_dir / "REPORT.md").write_text(
-        report.render(run_dict), encoding="utf-8", newline="\n")
+    with open(run_dir / "REPORT.md", "w", encoding="utf-8", newline="\n") as f:
+        f.write(report.render(run_dict))
 
     exit_code = 1 if aborted else 0
     return run_dict, exit_code
