@@ -1,0 +1,61 @@
+{
+  "arm": "treatment",
+  "outcome": "pass",
+  "reason_code": null,
+  "checks": [
+    {
+      "id": "checks[0]",
+      "type": "file_contains",
+      "outcome": "pass",
+      "detail": "substring found",
+      "duration_ms": 0
+    },
+    {
+      "id": "checks[1]",
+      "type": "file_contains",
+      "outcome": "pass",
+      "detail": "substring found",
+      "duration_ms": 0
+    }
+  ],
+  "agent": {
+    "exit_code": 0,
+    "timed_out": false,
+    "exec_error": null,
+    "duration_ms": 45,
+    "log_file": "raw/t002-fixes-section/treatment/agent.log",
+    "log_sha256": "f7b619a2f6dc95e72dddfb61d64fa1ad0c7ec78863879df3b1daad4e4317e644"
+  },
+  "metrics": {
+    "tokens_in": 2548,
+    "tokens_out": 40,
+    "model": "scripted-demo-v0",
+    "reported": true
+  },
+  "side_effects": {
+    "files_added": [
+      "RELEASE_NOTES.md"
+    ],
+    "files_removed": [],
+    "files_modified": [],
+    "agent_workspace_sha256": "ae207b309f1822090008c15d5dafd2a60876fc82069bb2f8eccad1236dcedeaa",
+    "snapshot_truncated": false,
+    "files_after": {
+      "RELEASE_NOTES.md": "6f674444f59d1365dcecd3b44a3e23b6ec42232470586ba425c2d58314c8b901",
+      "input/notes-draft.md": "489c177bde741a3e8844c8f0017276366c822e6bb4974aa439c9c56ed92766f2"
+    }
+  },
+  "caps": {
+    "task_timeout_s": 60,
+    "max_output_bytes": 65536,
+    "token_budget": 20000,
+    "flags": []
+  },
+  "provenance": {
+    "prompt_sha256": "07edf0011a42ba45878714c4132684baecede6170d40cf02bfbf121d51b34fd9",
+    "prompt_file": "raw/t002-fixes-section/treatment/prompt.txt",
+    "workspace": "raw/t002-fixes-section/treatment/workspace",
+    "post_check_workspace_sha256": "97c767c4b4cca0c341469817e4ac4773ef57218270832446d7e07625e0f1ccf4",
+    "skill_sha256": "4e20bf117fc1701112f1980d13f3f6505ce69aa68edb069abebed9f7e0f08178"
+  }
+}

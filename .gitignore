@@ -1,5 +1,9 @@
 .DS_Store
 node_modules/
 __pycache__/
-*.log
+*.pyc
 .env
+# demo outputs are disposable; committed evidence lives under results/
+# (never ignore *.log or results/ — run artifacts are part of the ledger)
+skillproof-demo/
+demo-artifacts/

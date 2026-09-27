@@ -1,0 +1,1 @@
+[task:t004] Write counts.txt whose first line is exactly: Total: 42 items

@@ -1,0 +1,1 @@
+[task:t001] Write RELEASE_NOTES.md starting with an H1 '# Release notes', containing a '## Highlights' section with at least one bullet.

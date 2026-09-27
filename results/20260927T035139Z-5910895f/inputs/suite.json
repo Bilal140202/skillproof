@@ -1,0 +1,59 @@
+{
+  "schema": "skillproof.suite/0.1",
+  "name": "release-notes-basics",
+  "description": "Demo regression-style suite (EVALUATION.md rule 1: small, deterministic, cheap). Five tasks covering the four outcome shapes the harness reports: improvement (t001), neutral (t002, t003), regression (t004), unknown (t005). Task tags like [task:t001] are a demo-only convention used by the scripted agent.",
+  "tasks": [
+    {
+      "id": "t001-notes-with-highlights",
+      "prompt": "[task:t001] Write RELEASE_NOTES.md starting with an H1 '# Release notes', containing a '## Highlights' section with at least one bullet.",
+      "checks": [
+        {"type": "file_exists", "path": "RELEASE_NOTES.md"},
+        {"type": "file_contains", "path": "RELEASE_NOTES.md", "text": "## Highlights"},
+        {"type": "file_contains", "path": "RELEASE_NOTES.md", "text": "*Prepared by the release desk*"}
+      ],
+      "tags": ["demo", "compliance"],
+      "notes": "Third check is skill-informed (footer). Baseline is expected to fail it."
+    },
+    {
+      "id": "t002-fixes-section",
+      "prompt": "[task:t002] Using the draft in input/notes-draft.md, write RELEASE_NOTES.md containing '## Fixes' and '## Known issues' sections.",
+      "setup": {
+        "input/notes-draft.md": "draft: fixes TBD\nknown issues TBD\n"
+      },
+      "checks": [
+        {"type": "file_contains", "path": "RELEASE_NOTES.md", "text": "## Fixes"},
+        {"type": "file_contains", "path": "RELEASE_NOTES.md", "text": "## Known issues"}
+      ],
+      "tags": ["demo", "neutral"]
+    },
+    {
+      "id": "t003-stats-json",
+      "prompt": "[task:t003] Create data/stats.json containing the mean value 3.5 under the key 'mean'. The file must be valid JSON.",
+      "checks": [
+        {"type": "file_exists", "path": "data/stats.json"},
+        {"type": "json_equals", "path": "data/stats.json", "key": "mean", "expected": 3.5},
+        {"type": "command_ok", "command": ["python3", "-c", "import json;json.load(open('data/stats.json'))"]}
+      ],
+      "tags": ["demo", "outside-skill-zone"]
+    },
+    {
+      "id": "t004-count-line",
+      "prompt": "[task:t004] Write counts.txt whose first line is exactly: Total: 42 items",
+      "checks": [
+        {"type": "file_contains", "path": "counts.txt", "text": "Total: 42 items"}
+      ],
+      "tags": ["demo", "exact-output"],
+      "notes": "The skill's 'spell out numbers' style rule conflicts with this exact-output requirement; the demo measures that as a regression."
+    },
+    {
+      "id": "t005-summary-brief",
+      "prompt": "[task:t005] Write SUMMARY.md containing a line starting with 'Scope:'.",
+      "checks": [
+        {"type": "file_exists", "path": "SUMMARY.md"},
+        {"type": "file_contains", "path": "SUMMARY.md", "text": "Scope:"}
+      ],
+      "tags": ["demo", "fail-closed"],
+      "notes": "Treatment arm deliberately exceeds caps.token_budget -> unknown (token_budget_exceeded): a ceiling hit is recorded, never a hang."
+    }
+  ]
+}

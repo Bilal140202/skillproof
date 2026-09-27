@@ -1,0 +1,67 @@
+{
+  "arm": "treatment",
+  "outcome": "pass",
+  "reason_code": null,
+  "checks": [
+    {
+      "id": "checks[0]",
+      "type": "file_exists",
+      "outcome": "pass",
+      "detail": "exists: RELEASE_NOTES.md",
+      "duration_ms": 0
+    },
+    {
+      "id": "checks[1]",
+      "type": "file_contains",
+      "outcome": "pass",
+      "detail": "substring found",
+      "duration_ms": 0
+    },
+    {
+      "id": "checks[2]",
+      "type": "file_contains",
+      "outcome": "pass",
+      "detail": "substring found",
+      "duration_ms": 0
+    }
+  ],
+  "agent": {
+    "exit_code": 0,
+    "timed_out": false,
+    "exec_error": null,
+    "duration_ms": 37,
+    "log_file": "raw/t001-notes-with-highlights/treatment/agent.log",
+    "log_sha256": "ff5372d06c4948c422916505694da52d661af5553a5383bfe5ae76d8a007ddd5"
+  },
+  "metrics": {
+    "tokens_in": 2560,
+    "tokens_out": 40,
+    "model": "scripted-demo-v0",
+    "reported": true
+  },
+  "side_effects": {
+    "files_added": [
+      "RELEASE_NOTES.md"
+    ],
+    "files_removed": [],
+    "files_modified": [],
+    "agent_workspace_sha256": "c3c3e0f0f8b9235d3f8af8f983c109d5a73999c908cee37aff0dac6b17c537f0",
+    "snapshot_truncated": false,
+    "files_after": {
+      "RELEASE_NOTES.md": "0fecbd15def749568c92817ad0545efc293474c2e36bb63cdd19d36523ea8e77"
+    }
+  },
+  "caps": {
+    "task_timeout_s": 60,
+    "max_output_bytes": 65536,
+    "token_budget": 20000,
+    "flags": []
+  },
+  "provenance": {
+    "prompt_sha256": "6ebc5d0b3a233f003541a381f666e7c8c0d8834ef51652fa394471ea7d7b2a87",
+    "prompt_file": "raw/t001-notes-with-highlights/treatment/prompt.txt",
+    "workspace": "raw/t001-notes-with-highlights/treatment/workspace",
+    "post_check_workspace_sha256": "79415c40b1dff6fd0cf8d178c0cec1139241946668a190b2631de5718d01f9e4",
+    "skill_sha256": "4e20bf117fc1701112f1980d13f3f6505ce69aa68edb069abebed9f7e0f08178"
+  }
+}

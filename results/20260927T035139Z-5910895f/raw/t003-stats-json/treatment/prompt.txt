@@ -1,0 +1,1 @@
+[task:t003] Create data/stats.json containing the mean value 3.5 under the key 'mean'. The file must be valid JSON.

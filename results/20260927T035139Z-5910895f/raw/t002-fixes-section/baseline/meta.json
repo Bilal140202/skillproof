@@ -1,0 +1,61 @@
+{
+  "arm": "baseline",
+  "outcome": "pass",
+  "reason_code": null,
+  "checks": [
+    {
+      "id": "checks[0]",
+      "type": "file_contains",
+      "outcome": "pass",
+      "detail": "substring found",
+      "duration_ms": 0
+    },
+    {
+      "id": "checks[1]",
+      "type": "file_contains",
+      "outcome": "pass",
+      "detail": "substring found",
+      "duration_ms": 0
+    }
+  ],
+  "agent": {
+    "exit_code": 0,
+    "timed_out": false,
+    "exec_error": null,
+    "duration_ms": 39,
+    "log_file": "raw/t002-fixes-section/baseline/agent.log",
+    "log_sha256": "9c71804a3140bc6a637c854a5d61bd87c82b0e6f5bbcd5cc7ab7ac2f62853aab"
+  },
+  "metrics": {
+    "tokens_in": 48,
+    "tokens_out": 40,
+    "model": "scripted-demo-v0",
+    "reported": true
+  },
+  "side_effects": {
+    "files_added": [
+      "RELEASE_NOTES.md"
+    ],
+    "files_removed": [],
+    "files_modified": [],
+    "agent_workspace_sha256": "ae207b309f1822090008c15d5dafd2a60876fc82069bb2f8eccad1236dcedeaa",
+    "snapshot_truncated": false,
+    "files_after": {
+      "RELEASE_NOTES.md": "6f674444f59d1365dcecd3b44a3e23b6ec42232470586ba425c2d58314c8b901",
+      "input/notes-draft.md": "489c177bde741a3e8844c8f0017276366c822e6bb4974aa439c9c56ed92766f2"
+    }
+  },
+  "caps": {
+    "task_timeout_s": 60,
+    "max_output_bytes": 65536,
+    "token_budget": 20000,
+    "flags": []
+  },
+  "provenance": {
+    "prompt_sha256": "07edf0011a42ba45878714c4132684baecede6170d40cf02bfbf121d51b34fd9",
+    "prompt_file": "raw/t002-fixes-section/baseline/prompt.txt",
+    "workspace": "raw/t002-fixes-section/baseline/workspace",
+    "post_check_workspace_sha256": "63a5a8e49a094f2f66f2d55bb4f447309a5a5e28bf16851db14db0bb47cf5f08",
+    "skill_sha256": null
+  }
+}

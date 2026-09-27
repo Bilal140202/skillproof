@@ -1,0 +1,67 @@
+{
+  "arm": "baseline",
+  "outcome": "fail",
+  "reason_code": "checks_failed",
+  "checks": [
+    {
+      "id": "checks[0]",
+      "type": "file_exists",
+      "outcome": "pass",
+      "detail": "exists: RELEASE_NOTES.md",
+      "duration_ms": 0
+    },
+    {
+      "id": "checks[1]",
+      "type": "file_contains",
+      "outcome": "pass",
+      "detail": "substring found",
+      "duration_ms": 0
+    },
+    {
+      "id": "checks[2]",
+      "type": "file_contains",
+      "outcome": "fail",
+      "detail": "substring not found: '*Prepared by the release desk*'",
+      "duration_ms": 0
+    }
+  ],
+  "agent": {
+    "exit_code": 0,
+    "timed_out": false,
+    "exec_error": null,
+    "duration_ms": 45,
+    "log_file": "raw/t001-notes-with-highlights/baseline/agent.log",
+    "log_sha256": "2ff22b10e758595b9121d23d4db12c28775ba59df762c08b50759717c6dcff3a"
+  },
+  "metrics": {
+    "tokens_in": 60,
+    "tokens_out": 40,
+    "model": "scripted-demo-v0",
+    "reported": true
+  },
+  "side_effects": {
+    "files_added": [
+      "RELEASE_NOTES.md"
+    ],
+    "files_removed": [],
+    "files_modified": [],
+    "agent_workspace_sha256": "11a3e4799cb835952f96f856733f2b8b6f94ec9ab8112a0c3e6ac4c4f115324e",
+    "snapshot_truncated": false,
+    "files_after": {
+      "RELEASE_NOTES.md": "15c01e5ee9ba187b9d3a16af9f91063f4a32327e842f5097351d40efa6422efc"
+    }
+  },
+  "caps": {
+    "task_timeout_s": 60,
+    "max_output_bytes": 65536,
+    "token_budget": 20000,
+    "flags": []
+  },
+  "provenance": {
+    "prompt_sha256": "6ebc5d0b3a233f003541a381f666e7c8c0d8834ef51652fa394471ea7d7b2a87",
+    "prompt_file": "raw/t001-notes-with-highlights/baseline/prompt.txt",
+    "workspace": "raw/t001-notes-with-highlights/baseline/workspace",
+    "post_check_workspace_sha256": "6d376cfd2e247746a38e51a2dcd738d81d14cec5c138fc1000aaa5264d0d2b4e",
+    "skill_sha256": null
+  }
+}

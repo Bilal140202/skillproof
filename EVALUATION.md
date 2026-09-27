@@ -1,8 +1,12 @@
 # Evaluation methodology — v0 (DRAFT)
 
-Status: design document. Nothing here has been executed yet; the harness is
-issue #1. Principles marked *(source)* credit the project whose practice or
+Status: design document. Principles marked *(source)* credit the project whose practice or
 failure shaped the rule.
+
+Implementation status: the harness MVP (issue #1) implements rules 2–8 and
+the pairing/provenance mechanics of this document; grading and judge-variance
+calibration (§3) remain to be built. See docs/DESIGN.md for how each rule
+maps to code, and results/README.md for the committed dogfood run.
 
 ## 1. What "works" means
 

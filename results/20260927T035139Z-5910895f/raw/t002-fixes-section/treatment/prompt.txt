@@ -1,0 +1,1 @@
+[task:t002] Using the draft in input/notes-draft.md, write RELEASE_NOTES.md containing '## Fixes' and '## Known issues' sections.

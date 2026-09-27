@@ -1,0 +1,1 @@
+[task:t005] Write SUMMARY.md containing a line starting with 'Scope:'.

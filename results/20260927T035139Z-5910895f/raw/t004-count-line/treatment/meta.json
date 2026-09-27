@@ -1,0 +1,53 @@
+{
+  "arm": "treatment",
+  "outcome": "fail",
+  "reason_code": "checks_failed",
+  "checks": [
+    {
+      "id": "checks[0]",
+      "type": "file_contains",
+      "outcome": "fail",
+      "detail": "substring not found: 'Total: 42 items'",
+      "duration_ms": 0
+    }
+  ],
+  "agent": {
+    "exit_code": 0,
+    "timed_out": false,
+    "exec_error": null,
+    "duration_ms": 29,
+    "log_file": "raw/t004-count-line/treatment/agent.log",
+    "log_sha256": "5572ccd87d0c482ca743c24a1d52d46ca832dce29dff9d4415cabeb24c117de0"
+  },
+  "metrics": {
+    "tokens_in": 2533,
+    "tokens_out": 40,
+    "model": "scripted-demo-v0",
+    "reported": true
+  },
+  "side_effects": {
+    "files_added": [
+      "counts.txt"
+    ],
+    "files_removed": [],
+    "files_modified": [],
+    "agent_workspace_sha256": "7921637c6b00fab57a5067faa42216fd9c7d93573f2826bbb48dc86abbec7f78",
+    "snapshot_truncated": false,
+    "files_after": {
+      "counts.txt": "52a7b390b322ee04afb699d945e5ebbb1ace8a6c2a87f193edd759bf849e49a9"
+    }
+  },
+  "caps": {
+    "task_timeout_s": 60,
+    "max_output_bytes": 65536,
+    "token_budget": 20000,
+    "flags": []
+  },
+  "provenance": {
+    "prompt_sha256": "d692642bdf9ed4ff663bf649eb1c93861cc01e30c47598ee98dc447577d9b19f",
+    "prompt_file": "raw/t004-count-line/treatment/prompt.txt",
+    "workspace": "raw/t004-count-line/treatment/workspace",
+    "post_check_workspace_sha256": "6476a80497d2a8594a2af707bfa8ce57840bdf518e5bc40da06b7a204a960a3e",
+    "skill_sha256": "4e20bf117fc1701112f1980d13f3f6505ce69aa68edb069abebed9f7e0f08178"
+  }
+}

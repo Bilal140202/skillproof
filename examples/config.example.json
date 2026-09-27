@@ -1,0 +1,19 @@
+{
+  "schema": "skillproof.config/0.1",
+  "adapter": {
+    "type": "shell",
+    "command_template": "python3 {suite_dir}/demo_agent.py --workspace {workspace} --prompt-file {prompt_file} --skill-dir {skill_dir} --arm {arm}",
+    "env": {}
+  },
+  "model": {
+    "name": "scripted-demo-v0 (no LLM)",
+    "pinned": true
+  },
+  "caps": {
+    "task_timeout_s": 60,
+    "run_timeout_s": 600,
+    "max_output_bytes": 65536,
+    "token_budget": 20000
+  },
+  "notes": "Demo config. The 'model' is a scripted deterministic agent driven through the same shell adapter a real CLI agent would use. token_budget=20000 trips the t005 treatment arm on purpose (fail-closed demo). For a real agent, point command_template at your local CLI, e.g. \"your-agent-cli --workdir {workspace} --task-file {prompt_file} --skills {skill_dir}\"."
+}

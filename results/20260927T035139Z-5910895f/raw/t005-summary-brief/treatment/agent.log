@@ -1,0 +1,7 @@
+--- command ---
+python3 /home/z/my-project/repo-skillproof/examples/demo_agent.py --workspace /home/z/my-project/repo-skillproof/results/20260927T035139Z-5910895f/raw/t005-summary-brief/treatment/workspace --prompt-file /home/z/my-project/repo-skillproof/results/20260927T035139Z-5910895f/raw/t005-summary-brief/treatment/prompt.txt --skill-dir /home/z/my-project/repo-skillproof/examples/skills/notes-format-skill --arm treatment
+--- exit_code=0 timed_out=False exec_error=None ---
+--- stdout ---
+
+--- stderr ---
+

@@ -1,0 +1,53 @@
+{
+  "arm": "baseline",
+  "outcome": "pass",
+  "reason_code": null,
+  "checks": [
+    {
+      "id": "checks[0]",
+      "type": "file_contains",
+      "outcome": "pass",
+      "detail": "substring found",
+      "duration_ms": 0
+    }
+  ],
+  "agent": {
+    "exit_code": 0,
+    "timed_out": false,
+    "exec_error": null,
+    "duration_ms": 29,
+    "log_file": "raw/t004-count-line/baseline/agent.log",
+    "log_sha256": "cfc19a63e6539fe4675822db4360fa6699a0ca7f04e15655bfb05f3f9ca10e6c"
+  },
+  "metrics": {
+    "tokens_in": 33,
+    "tokens_out": 40,
+    "model": "scripted-demo-v0",
+    "reported": true
+  },
+  "side_effects": {
+    "files_added": [
+      "counts.txt"
+    ],
+    "files_removed": [],
+    "files_modified": [],
+    "agent_workspace_sha256": "d471052a682e0079054ac6fb16fe5ee35c80dc15f8ecc7b094b6b2fd187e95c7",
+    "snapshot_truncated": false,
+    "files_after": {
+      "counts.txt": "5600be839e559bffdab52c51b93ab5456fe0908f9580dbb7c38815bf982e732e"
+    }
+  },
+  "caps": {
+    "task_timeout_s": 60,
+    "max_output_bytes": 65536,
+    "token_budget": 20000,
+    "flags": []
+  },
+  "provenance": {
+    "prompt_sha256": "d692642bdf9ed4ff663bf649eb1c93861cc01e30c47598ee98dc447577d9b19f",
+    "prompt_file": "raw/t004-count-line/baseline/prompt.txt",
+    "workspace": "raw/t004-count-line/baseline/workspace",
+    "post_check_workspace_sha256": "e264140a2e1487361f4cd4d39ce3c38cb181d670a20de0c7ce7e36e51fda459e",
+    "skill_sha256": null
+  }
+}

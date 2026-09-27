@@ -23,23 +23,44 @@ with and without a candidate skill — outcome quality, token cost, wall time, a
 side effects, with provenance for every number and the losing runs published
 alongside the winning ones.
 
+## Quickstart (fully offline)
+
+```sh
+git clone https://github.com/Bilal140202/skillproof && cd skillproof
+./bin/harness demo                 # scripted agent, 5 tasks, ~10 seconds
+./bin/harness verify --run "$(ls -d skillproof-demo/results/*)"
+```
+
+The demo produces a real delta report containing all four outcome shapes:
+an improvement (fail->pass), neutrals, a regression (pass->fail), and an
+unknown (token budget exceeded). Against a real agent, the same command shape
+applies — point the config's `command_template` at your local CLI:
+
+```sh
+./bin/harness run --suite my-suite.json --skill path/to/skill --config my-config.json
+```
+
+Formats: [docs/FORMATS.md](docs/FORMATS.md) · Design decisions:
+[docs/DESIGN.md](docs/DESIGN.md) · Methodology: [EVALUATION.md](EVALUATION.md).
+No dependencies beyond Python 3.9+; nothing to install.
+
 ## Status — honest maturity labels
 
-No number on this page is a measurement. The project is in **Phase 0**: research
-foundation before instrumentation, because a harness built before the methodology
-is written produces exactly the kind of untrustworthy benchmarks this ecosystem
-already has too many of.
+No number on this page is a model-derived measurement. Phase 0 (research
+foundation) is done; Phase 1 (instrumentation) has started with the harness
+MVP. The harness is real and tested; the measurements it will be trusted for
+(model-in-the-loop runs on the issue #2 corpus) do not exist yet.
 
 | Component | Status | Evidence |
 | --- | --- | --- |
 | Landscape analysis — 5 adjacent tools, code-verified | **REAL** | [LANDSCAPE.md](LANDSCAPE.md) — every claim checked against cloned sources at pinned commits |
 | Gap register | **REAL** | [GAPS.md](GAPS.md) |
-| Evaluation methodology | **DRAFT** | [EVALUATION.md](EVALUATION.md) — design only, nothing executed yet |
-| Evaluation harness | **MISSING** | issue #1 |
+| Evaluation methodology | **DRAFT** | [EVALUATION.md](EVALUATION.md) — v0 in effect for the harness below |
+| Evaluation harness | **REAL (MVP)** | runnable: `bin/harness run` emits provenance-complete delta reports with three-valued outcomes and fail-closed ceilings; 77 stdlib-only tests; `verify` recomputes every recorded hash; committed dogfood run with a regression + root cause under [results/](results/README.md). Not yet: API adapters, model-based grading (issue #3) |
 | Skill corpus + task suites | **MISSING** | issue #2 |
 | Grading protocol (rubrics, judge variance) | **MISSING** | issue #3 |
-| Machine-readable result format + provenance | **MISSING** | issue #4 |
-| Published results (wins *and* losses) | **NONE** | by design, until the harness exists |
+| Machine-readable result format + provenance | **DRAFT** | [docs/FORMATS.md](docs/FORMATS.md) — implemented in the harness, finalized by issue #4 |
+| Published results (wins *and* losses) | **DOGFOOD ONLY** | one scripted-agent run committed under [results/](results/README.md) — it exercises the plumbing and is labeled as such; zero model-derived claims exist |
 
 ## Non-goals
 

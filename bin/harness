@@ -1,0 +1,6 @@
+#!/bin/sh
+# SkillProof harness CLI — the interface named in EVALUATION.md §5:
+#   harness run --suite S --skill K --config C
+# Equivalent to `python3 -m skillproof` with the repo root on PYTHONPATH.
+dir=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd) || exit 1
+PYTHONPATH="$dir${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m skillproof "$@"

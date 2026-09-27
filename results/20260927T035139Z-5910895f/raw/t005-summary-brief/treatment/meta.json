@@ -1,0 +1,60 @@
+{
+  "arm": "treatment",
+  "outcome": "unknown",
+  "reason_code": "token_budget_exceeded",
+  "checks": [
+    {
+      "id": "checks[0]",
+      "type": "file_exists",
+      "outcome": "pass",
+      "detail": "exists: SUMMARY.md",
+      "duration_ms": 0
+    },
+    {
+      "id": "checks[1]",
+      "type": "file_contains",
+      "outcome": "pass",
+      "detail": "substring found",
+      "duration_ms": 0
+    }
+  ],
+  "agent": {
+    "exit_code": 0,
+    "timed_out": false,
+    "exec_error": null,
+    "duration_ms": 29,
+    "log_file": "raw/t005-summary-brief/treatment/agent.log",
+    "log_sha256": "266bb417197678ae243f234b6fd1e3702cab456e725e188bcfb7f291fe38938d"
+  },
+  "metrics": {
+    "tokens_in": 26527,
+    "tokens_out": 1240,
+    "model": "scripted-demo-v0",
+    "reported": true
+  },
+  "side_effects": {
+    "files_added": [
+      "SUMMARY.md"
+    ],
+    "files_removed": [],
+    "files_modified": [],
+    "agent_workspace_sha256": "7d90453341500459debfe50142be648c1e0e31d053ad23c88fdb020ace9cd0d9",
+    "snapshot_truncated": false,
+    "files_after": {
+      "SUMMARY.md": "1eb6f9ddc3575f252ec087594ce236fb3eb4ad752982807d66c9079692b39313"
+    }
+  },
+  "caps": {
+    "task_timeout_s": 60,
+    "max_output_bytes": 65536,
+    "token_budget": 20000,
+    "flags": []
+  },
+  "provenance": {
+    "prompt_sha256": "dd136d402f5737652c51a04afabdab32987048cd1f458c00b72dae932fdcdf68",
+    "prompt_file": "raw/t005-summary-brief/treatment/prompt.txt",
+    "workspace": "raw/t005-summary-brief/treatment/workspace",
+    "post_check_workspace_sha256": "5395a09653bc530a5f2eced3f2a1b015c8112d9f35a5be4abacf12cbf596b557",
+    "skill_sha256": "4e20bf117fc1701112f1980d13f3f6505ce69aa68edb069abebed9f7e0f08178"
+  }
+}
